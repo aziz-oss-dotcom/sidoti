@@ -156,3 +156,7 @@ kelola panti (CRUD), buat & publikasikan laporan.
 
 ## Rencana Pengujian
 Lihat 20 test case Black Box di `Ringkasan_Perancangan_SIDOTI.md` bagian 7.
+
+
+
+TEST doang ini, TETAPI HARI INI SY KATAKAN SAYA AKAN LAWAN!!
