@@ -3,8 +3,8 @@ import assert from 'assert';
 // Test dengan intentional error untuk dokumentasi CI failure
 
 function formatRupiah(amount) {
-  // ❌ WRONG: Return format yang berbeda dengan yang diharapkan
-  return `Rp ${amount.toLocaleString('id-ID')}`;
+  // ✅ FIXED: Format rupiah tanpa spasi
+  return `Rp${amount.toLocaleString('id-ID')}`;
 }
 
 function validateDonationAmount(amount) {
