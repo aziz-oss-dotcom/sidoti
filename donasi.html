@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Donasi - SIDOTI</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header id="navbar"></header>
+
+  <!-- Page Header -->
+  <section style="background: var(--bg-page); padding: 32px 0; border-bottom: 1px solid var(--border);">
+    <div class="container" style="max-width: 1000px;">
+      <h1 style="margin-bottom: 8px;">Mulai langkah kebaikan Anda</h1>
+      <p style="font-size: 14px; color: var(--slate); margin-bottom: 24px;">
+        Lengkapi donasi untuk membantu memenuhi kebutuhan anak-anak panti.
+      </p>
+      
+      <!-- Stepper -->
+      <div class="stepper" style="background: transparent; padding: 0; margin-bottom: 0;">
+        <div class="step active">
+          <div class="step-circle">1</div>
+          <div class="step-label">Isi Donasi</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-circle">2</div>
+          <div class="step-label">Pembayaran</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-circle">3</div>
+          <div class="step-label">Verifikasi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section style="background: var(--surface); padding: 40px 0;">
+    <div class="container" style="max-width: 1000px;">
+      <div class="grid-2" style="gap: 24px;">
+        <!-- Kiri: Form Donasi (65%) -->
+        <div style="flex: 1.9;">
+          <div class="card">
+            <h2 class="card-title">Informasi Donasi</h2>
+
+            <div id="alert-box" style="margin-bottom: 16px;"></div>
+
+            <form id="form-donasi">
+              <!-- Pilih Panti -->
+              <div class="form-group">
+                <label for="panti">Pilih Panti Tujuan Donasi</label>
+                <select id="panti" required></select>
+              </div>
+
+              <hr style="border: none; border-top: 1px solid var(--border); margin: 20px 0;" />
+
+              <!-- Nominal Donasi -->
+              <div class="form-group">
+                <label>Pilih nominal donasi</label>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px;">
+                  <button type="button" class="nominal-btn" data-nominal="25000">Rp25.000</button>
+                  <button type="button" class="nominal-btn" data-nominal="50000">Rp50.000</button>
+                  <button type="button" class="nominal-btn" data-nominal="100000">Rp100.000</button>
+                  <button type="button" class="nominal-btn" data-nominal="custom">Lainnya</button>
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    id="nominal"
+                    min="10000"
+                    step="1000"
+                    placeholder="Nominal khusus (min Rp10.000)"
+                    required
+                    style="display: none;"
+                  />
+                </div>
+              </div>
+
+              <hr style="border: none; border-top: 1px solid var(--border); margin: 20px 0;" />
+
+              <!-- Nama & HP (2 kolom) -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+                <div class="form-group">
+                  <label for="nama">Nama Lengkap</label>
+                  <input type="text" id="nama" placeholder="Masukkan nama lengkap" required minlength="2" />
+                </div>
+                <div class="form-group">
+                  <label for="no_hp">No. HP</label>
+                  <input type="tel" id="no_hp" placeholder="08xxxxxxxxxx" required />
+                </div>
+              </div>
+
+              <!-- Pesan Opsional -->
+              <div class="form-group">
+                <label for="pesan">Pesan untuk Panti <span style="color: var(--slate-light); font-weight: 400;">(opsional)</span></label>
+                <textarea
+                  id="pesan"
+                  placeholder="Tulis pesan motivasi untuk panti..."
+                  style="min-height: 80px;"
+                ></textarea>
+              </div>
+
+              <!-- Checkbox Anonim -->
+              <div class="checkbox-group" style="margin: 20px 0;">
+                <input type="checkbox" id="anonim" />
+                <label for="anonim">Sembunyikan nama saya sebagai donatur anonim</label>
+              </div>
+
+              <!-- Info Box -->
+              <div style="
+                background: var(--primary-tint);
+                border-radius: var(--radius-md);
+                padding: 12px 16px;
+                margin-bottom: 24px;
+                display: flex;
+                gap: 12px;
+                font-size: 13px;
+                color: var(--primary);
+              ">
+                <svg style="width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px;" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/>
+                  <path d="M12 5c-.6 0-1 .4-1 1v6c0 .6.4 1 1 1s1-.4 1-1V6c0-.6-.4-1-1-1zm0 14c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1z"/>
+                </svg>
+                <span>Data pribadi Anda hanya digunakan untuk proses donasi dan konfirmasi pembayaran.</span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Kanan: Ringkasan Donasi (32%) -->
+        <div style="flex: 1;">
+          <div class="card">
+            <h2 class="card-title">Ringkasan Donasi</h2>
+
+            <!-- Panti Info -->
+            <div id="ringkasan-panti" style="text-align: center; padding: 24px 0; color: var(--slate-light);">
+              <p style="font-size: 13px;">Pilih panti terlebih dahulu</p>
+            </div>
+
+            <hr style="border: none; border-top: 1px solid var(--border); margin: 16px 0;" />
+
+            <!-- Detail Donasi -->
+            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 8px;">
+              <span>Nominal donasi</span>
+              <strong id="ringkasan-nominal" style="color: var(--navy);">Rp0</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 16px;">
+              <span>Biaya layanan</span>
+              <strong id="ringkasan-biaya" style="color: var(--navy);">Rp0</strong>
+            </div>
+
+            <hr style="border: none; border-top: 1px solid var(--border); margin: 16px 0;" />
+
+            <!-- Total -->
+            <div style="display: flex; justify-content: space-between; margin-bottom: 24px;">
+              <span style="font-weight: 500; color: var(--navy);">Total donasi</span>
+              <div style="text-align: right;">
+                <div style="font-size: 26px; font-weight: 700; color: var(--primary); line-height: 1;">
+                  <span id="ringkasan-total">Rp0</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" form="form-donasi" class="btn btn-primary lg" id="btn-submit">
+              Lanjut Pembayaran
+            </button>
+
+            <!-- Caption -->
+            <p style="text-align: center; font-size: 12px; color: var(--slate-light); margin-top: 16px;">
+              100% donasi Anda disalurkan untuk kebutuhan panti.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="footer-left">© 2026 SIDOTI. Bersama, hadirkan lebih banyak kebaikan.</div>
+        <div class="footer-right">
+          <a href="#" class="footer-link">Kebijakan Privasi</a>
+          <a href="#" class="footer-link">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .nominal-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 12px 12px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .nominal-btn:hover {
+      border-color: var(--primary);
+    }
+    
+    .nominal-btn.selected {
+      border: 2px solid var(--primary);
+      background: var(--primary-tint);
+      color: var(--primary);
+    }
+    
+    .nominal-btn.selected::before {
+      content: '✓ ';
+      margin-right: 4px;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/supabase.js"></script>
+  <script src="/assets/js/auth.js"></script>
+  <script src="/assets/js/donasi.js"></script>
+</body>
+</html>
+

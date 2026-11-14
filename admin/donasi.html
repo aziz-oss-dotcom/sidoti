@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verifikasi Donasi - SIDOTI Admin</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header id="navbar"></header>
+
+  <div class="admin-layout">
+    <aside class="admin-sidebar" id="admin-sidebar"></aside>
+    <main class="admin-main">
+      <div class="flex between wrap gap-1" style="margin-bottom:20px">
+        <h1 style="margin:0">Verifikasi Donasi</h1>
+        <select id="filter-status" style="width:auto">
+          <option value="menunggu">Menunggu (default)</option>
+          <option value="berhasil">Berhasil</option>
+          <option value="gagal">Gagal</option>
+          <option value="">Semua</option>
+        </select>
+      </div>
+
+      <div id="alert-box"></div>
+
+      <div class="card mb-0">
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Tanggal</th>
+                <th>Donatur</th>
+                <th>Panti</th>
+                <th>Nominal</th>
+                <th>Bukti</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="verifikasi-body">
+              <tr><td colspan="7"><div class="loading-wrap"><span class="spinner"></span></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer"><div class="container">SIDOTI · Admin</div></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/supabase.js"></script>
+  <script src="/assets/js/auth.js"></script>
+  <script src="/assets/js/admin.js"></script>
+  <script src="/assets/js/admin/verifikasi.js"></script>
+</body>
+</html>

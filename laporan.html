@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laporan Dana - SIDOTI</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header id="navbar"></header>
+
+  <!-- Page Header -->
+  <section style="background: var(--bg-page); padding: 32px 0; border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <h1 style="margin-bottom: 8px;">Laporan Penggunaan Dana</h1>
+      <p style="font-size: 14px; color: var(--slate); margin: 0;">
+        Transparansi pengelolaan donasi yang masuk ke panti asuhan. Lihat kemana setiap rupiah disalurkan.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section style="background: var(--surface); padding: 40px 0;">
+    <div class="container">
+      <!-- Laporan List -->
+      <div id="laporan-list">
+        <div style="text-align: center; padding: 40px;">
+          <div style="font-size: 13px; color: var(--slate-light);">Memuat laporan keuangan...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="footer-left">© 2026 SIDOTI. Bersama, hadirkan lebih banyak kebaikan.</div>
+        <div class="footer-right">
+          <a href="#" class="footer-link">Kebijakan Privasi</a>
+          <a href="#" class="footer-link">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/supabase.js"></script>
+  <script src="/assets/js/auth.js"></script>
+  <script src="/assets/js/laporan.js"></script>
+</body>
+</html>
+

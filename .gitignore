@@ -1,0 +1,18 @@
+# SIDOTI
+# Lokal & secrets
+.env
+.env.local
+.env.*.local
+
+# Tergantung (jika nanti pakai bundler)
+node_modules/
+
+# Build & cache
+.netlify/
+dist/
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

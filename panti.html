@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Info Panti - SIDOTI</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header id="navbar"></header>
+
+  <!-- Page Header -->
+  <section style="background: var(--bg-page); padding: 32px 0; border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <h1 style="margin-bottom: 8px;">Panti Asuhan yang Kami Bantu</h1>
+      <p style="font-size: 14px; color: var(--slate); margin: 0;">
+        Pilih panti dan ketahui kebutuhan spesifik mereka. Setiap donasi membuat perbedaan nyata.
+      </p>
+    </div>
+  </section>
+
+  <!-- Toolbar & List -->
+  <section style="background: var(--surface); padding: 40px 0;">
+    <div class="container">
+      <!-- Search & Filter -->
+      <div style="
+        display: flex;
+        gap: 12px;
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+      ">
+        <div style="position: relative; flex: 1; min-width: 280px;">
+          <svg style="
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            color: var(--slate-light);
+            pointer-events: none;
+          " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input
+            type="text"
+            id="cari"
+            placeholder="Cari nama panti atau kota..."
+            style="
+              width: 100%;
+              padding: 10px 12px 10px 36px;
+              border: 1px solid var(--border);
+              border-radius: var(--radius-md);
+              font-size: 13px;
+            "
+          />
+        </div>
+
+        <select id="filter-kategori" style="
+          padding: 10px 14px;
+          border: 1px solid var(--border);
+          border-radius: var(--radius-md);
+          font-size: 13px;
+          min-width: 160px;
+        ">
+          <option value="">Semua Kategori</option>
+          <option value="Pangan">Kebutuhan Pangan</option>
+          <option value="Pendidikan">Pendidikan</option>
+          <option value="Fasilitas">Fasilitas Panti</option>
+          <option value="Kesehatan">Kesehatan</option>
+        </select>
+      </div>
+
+      <!-- Grid Kartu Panti -->
+      <div class="grid-3" id="panti-list" style="margin-bottom: 32px;">
+        <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+          <div style="font-size: 13px; color: var(--slate-light);">Memuat data panti...</div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div id="pagination-container" class="pagination" style="margin-bottom: 0;"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="footer-left">© 2026 SIDOTI. Bersama, hadirkan lebih banyak kebaikan.</div>
+        <div class="footer-right">
+          <a href="#" class="footer-link">Kebijakan Privasi</a>
+          <a href="#" class="footer-link">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/supabase.js"></script>
+  <script src="/assets/js/auth.js"></script>
+  <script src="/assets/js/panti.js"></script>
+</body>
+</html>
+
